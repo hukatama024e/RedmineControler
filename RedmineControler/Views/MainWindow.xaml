@@ -1,0 +1,21 @@
+﻿<Window x:Class="RedmineControler.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RedmineControler"
+        mc:Ignorable="d"
+        Title="RedmineControler" Height="483.367" Width="915">
+    <Grid>
+        <TextBox x:Name="response" HorizontalAlignment="Left" Width="889" Height="381"
+            Margin="10,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding ResponceMessage.Value}"/>
+
+        <local:CommandableComboBox ItemsSource="{Binding RedmineProjects}"
+                  SelectedItem="{Binding Project}"
+                  DisplayMemberPath="Name" 
+                  SelectedValuePath="Id" 
+                  SelectedValue="{Binding SelectedProjectId.Value}"
+                  Margin="10,10,703.8,413.6" 
+                  Command="{Binding ComboBoxCmd}"/>
+    </Grid>
+</Window>
