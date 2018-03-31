@@ -97,6 +97,7 @@
     <Compile Include="Models\GetIssueData.cs" />
     <Compile Include="Models\PostIssueData.cs" />
     <Compile Include="Models\RedMineApi.cs" />
+    <Compile Include="Models\RedmineSetting.cs" />
     <Compile Include="Models\UserData.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\CommandableComboBox.cs" />
@@ -140,6 +141,6 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>echo F | xcopy $(ProjectDir)userInfo.json  $(TargetDir)userInfo.json</PreBuildEvent>
+    <PreBuildEvent>echo F | xcopy $(ProjectDir)redmine_setting.json  $(TargetDir)redmine_setting.json /Y /Q</PreBuildEvent>
   </PropertyGroup>
 </Project>

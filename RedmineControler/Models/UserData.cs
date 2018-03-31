@@ -1,13 +1,16 @@
-﻿using System.Runtime.Serialization;
+﻿using System.IO;
+using Utf8Json;
 
 namespace RedmineControler
 {
     public class UserData
     {
-        [DataMember( Name = "url" )]
-        public string Url{ get; set; }
+        public static UserData Instance { get; } = new UserData();
+        public RedmineSetting RedmineData { get; set; }
 
-        [DataMember( Name = "api_key" )]
-        public string ApiKey { get; set; }
+        private UserData()
+        {
+            this.RedmineData = JsonSerializer.Deserialize<RedmineSetting>( File.ReadAllBytes( "redmine_setting.json" ) );
+        }
     }
 }
