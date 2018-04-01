@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="RedmineControler" Height="483.367" Width="915">
     <Grid>
-        <TextBox x:Name="response" HorizontalAlignment="Left" Width="889" Height="381"
+        <TextBox x:Name="response" HorizontalAlignment="Left" Width="869" Height="359"
             Margin="10,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding ResponceMessage.Value}"/>
 
         <local:CommandableComboBox ItemsSource="{Binding RedmineProjects}"
@@ -17,5 +17,11 @@
                   SelectedValue="{Binding SelectedProjectId.Value}"
                   Margin="10,10,703.8,413.6" 
                   Command="{Binding ComboBoxCmd}"/>
+        <Button Content="New Ticket"
+                HorizontalAlignment="Left"
+                Margin="804,409,0,0"
+                VerticalAlignment="Top" 
+                Width="75"
+                Command="{Binding AddNewTicketCmd}"/>
     </Grid>
 </Window>

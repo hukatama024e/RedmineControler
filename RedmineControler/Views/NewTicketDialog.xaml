@@ -1,0 +1,21 @@
+﻿<Window x:Class="RedmineControler.NewTicketDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RedmineControler"
+        mc:Ignorable="d"
+        Title="新しいチケット" Height="295.2" Width="465.333">
+    <Grid>
+        <Label Content="トラッカー" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,10,348.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
+        <Label Content="ステータス" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,40,348.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
+        <Label Content="優先度" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,70,348.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
+        <Label Content="タイトル" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,100,348.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
+        <Label Content="概要" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,130,348.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="116,10,0,0" Height="25"/>
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="116,40,0,0" Height="25"/>
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="116,70,0,0" Height="25"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="116,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="332" />
+        <TextBox HorizontalAlignment="Left" Height="72" Margin="116,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" />
+    </Grid>
+</Window>

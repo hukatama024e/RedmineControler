@@ -18,6 +18,7 @@ namespace RedmineControler
         public ReactiveCollection<Project> RedmineProjects { get; private set; } = new ReactiveCollection<Project>();
 
         public ReactiveCommand ComboBoxCmd { get; private set; }
+        public ReactiveCommand AddNewTicketCmd { get; private set; }
 
         public MainWindowViewModel()
 		{
@@ -29,6 +30,12 @@ namespace RedmineControler
                 foreach( var issue in issueData.Issues ) {
                     this.ResponceMessage.Value += $"#{issue.Id} {issue.Subject} Status={issue.Status.Name}\r\n";
                 }
+            } );
+
+            this.AddNewTicketCmd = new ReactiveCommand();
+            this.AddNewTicketCmd.Subscribe( _ => {
+                var newTicketDialog = new NewTicketDialog();
+                newTicketDialog.ShowDialog();
             } );
 
             var projects = RedMineApi.GetProjectAsync( UserData.Instance.RedmineData.Url, UserData.Instance.RedmineData.ApiKey ).Result;
