@@ -12,10 +12,30 @@
         <Label Content="優先度" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,70,348.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
         <Label Content="タイトル" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,100,348.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
         <Label Content="概要" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,130,348.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
-        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="116,10,0,0" Height="25"/>
-        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="116,40,0,0" Height="25"/>
-        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="116,70,0,0" Height="25"/>
+        <ComboBox ItemsSource="{Binding RedmineTrackers}"
+                  DisplayMemberPath="Name" 
+                  SelectedValuePath="Id" 
+                  SelectedValue="{Binding SelectedTrackerId.Value}"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Width="120" Margin="116,10,0,0" Height="25" />
+        <ComboBox ItemsSource="{Binding RedmineStatuses}"
+                  DisplayMemberPath="Name" 
+                  SelectedValuePath="Id" 
+                  SelectedValue="{Binding SelectedStatusId.Value}"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Width="120" Margin="116,40,0,0" Height="25" />
+        <ComboBox ItemsSource="{Binding RedminePriorities}"
+                  DisplayMemberPath="Name" 
+                  SelectedValuePath="Id" 
+                  SelectedValue="{Binding SelectedPriorityId.Value}"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Width="120" Margin="116,70,0,0" Height="25" />
         <TextBox HorizontalAlignment="Left" Height="25" Margin="116,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="332" />
         <TextBox HorizontalAlignment="Left" Height="72" Margin="116,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" />
+        <Button Content="Create Ticket" HorizontalAlignment="Left" Margin="238,236,0,0" VerticalAlignment="Top" Width="97" Command="{Binding CreateTicketCmd}"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="351,236,0,0" VerticalAlignment="Top" Width="97" Command="{Binding CancelCmd}"/>
     </Grid>
 </Window>

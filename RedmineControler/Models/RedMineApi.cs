@@ -62,5 +62,44 @@ namespace RedmineControler
                 throw;
             }
         }
+
+        public static async Task<Trackers> GetTrackerAsync( string url, string apiKey )
+        {
+            try {
+                var apiResponce = await new HttpClient().GetStringAsync( $"{url}/trackers.json?key={apiKey}" )
+                                                        .ConfigureAwait( false );
+
+                return JsonSerializer.Deserialize<Trackers>( apiResponce );
+            }
+            catch( Exception ) {
+                throw;
+            }
+        }
+
+        public static async Task<IssueStatuses> GetIssueStatusAsync( string url, string apiKey )
+        {
+            try {
+                var apiResponce = await new HttpClient().GetStringAsync( $"{url}/issue_statuses.json?key={apiKey}" )
+                                                        .ConfigureAwait( false );
+
+                return JsonSerializer.Deserialize<IssueStatuses>( apiResponce );
+            }
+            catch( Exception ) {
+                throw;
+            }
+        }
+
+        public static async Task<IssuePriorities> GetIssuePriorityAsync( string url, string apiKey )
+        {
+            try {
+                var apiResponce = await new HttpClient().GetStringAsync( $"{url}/enumerations/issue_priorities.json?key={apiKey}" )
+                                                        .ConfigureAwait( false );
+
+                return JsonSerializer.Deserialize<IssuePriorities>( apiResponce );
+            }
+            catch( Exception ) {
+                throw;
+            }
+        }
     }
 }

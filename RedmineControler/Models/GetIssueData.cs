@@ -30,10 +30,10 @@ namespace RedmineControler
         public Tracker Tracker { get; set; }
 
         [DataMember( Name = "status" )]
-        public Status Status { get; set; }
+        public IssueStatus Status { get; set; }
 
         [DataMember( Name = "priority" )]
-        public Priority Priority { get; set; }
+        public IssuePriority Priority { get; set; }
 
         [DataMember( Name = "author" )]
         public Author Author { get; set; }
@@ -64,33 +64,6 @@ namespace RedmineControler
 
         [DataMember( Name = "parent" )]
         public Parent Parent { get; set; }
-    }
-
-    public class Tracker
-    {
-        [DataMember( Name = "id" )]
-        public int Id { get; set; }
-
-        [DataMember( Name = "name" )]
-        public string Name { get; set; }
-    }
-
-    public class Status
-    {
-        [DataMember( Name = "id" )]
-        public int Id { get; set; }
-
-        [DataMember( Name = "name" )]
-        public string Name { get; set; }
-    }
-
-    public class Priority
-    {
-        [DataMember( Name = "id" )]
-        public int Id { get; set; }
-
-        [DataMember( Name = "name" )]
-        public string Name { get; set; }
     }
 
     public class Author

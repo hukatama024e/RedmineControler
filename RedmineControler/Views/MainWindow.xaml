@@ -11,7 +11,6 @@
             Margin="10,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding ResponceMessage.Value}"/>
 
         <local:CommandableComboBox ItemsSource="{Binding RedmineProjects}"
-                  SelectedItem="{Binding Project}"
                   DisplayMemberPath="Name" 
                   SelectedValuePath="Id" 
                   SelectedValue="{Binding SelectedProjectId.Value}"
