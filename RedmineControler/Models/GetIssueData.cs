@@ -6,7 +6,7 @@ namespace RedmineControler
     public class GetIssueData
     {
         [DataMember( Name = "issues" )]
-        public Issue[] Issues { get; set; }
+        public GetIssue[] Issues { get; set; }
 
         [DataMember( Name = "total_count" )]
         public int TotalCount { get; set; }
@@ -18,7 +18,7 @@ namespace RedmineControler
         public int Limit { get; set; }
     }
 
-    public class Issue
+    public class GetIssue
     {
         [DataMember( Name = "id" )]
         public int Id { get; set; }
