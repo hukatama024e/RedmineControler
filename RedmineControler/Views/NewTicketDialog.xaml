@@ -5,37 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RedmineControler"
         mc:Ignorable="d"
-        Title="新しいチケット" Height="295.2" Width="465.333">
+        Title="新しいチケット" Height="332" Width="465.333">
     <Grid>
-        <Label Content="トラッカー" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,10,348.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
-        <Label Content="ステータス" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,40,348.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
-        <Label Content="優先度" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,70,348.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
-        <Label Content="タイトル" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,100,348.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
-        <Label Content="概要" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,130,348.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
+        <Label Content="プロジェクト" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,5,349.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
+        <Label Content="トラッカー" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,35,349.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
+        <Label Content="ステータス" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,65,349.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
+        <Label Content="優先度" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,95,349.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
+        <Label Content="タイトル" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,125,349.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
+        <Label Content="概要" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,155,349.2,0" Width="100" Height="25" FontFamily="Meiryo" FontSize="10"/>
         <ComboBox ItemsSource="{Binding RedmineTrackers}"
                   DisplayMemberPath="Name" 
                   SelectedValuePath="Id" 
                   SelectedValue="{Binding SelectedTrackerId.Value}"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
-                  Width="120" Margin="116,10,0,0" Height="25" />
+                  Width="120" Margin="116,35,0,0" Height="25" />
         <ComboBox ItemsSource="{Binding RedmineStatuses}"
                   DisplayMemberPath="Name" 
                   SelectedValuePath="Id" 
                   SelectedValue="{Binding SelectedStatusId.Value}"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
-                  Width="120" Margin="116,40,0,0" Height="25" />
+                  Width="120" Margin="116,65,0,0" Height="25" />
         <ComboBox ItemsSource="{Binding RedminePriorities}"
                   DisplayMemberPath="Name" 
                   SelectedValuePath="Id" 
                   SelectedValue="{Binding SelectedPriorityId.Value}"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
-                  Width="120" Margin="116,70,0,0" Height="25" />
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="116,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="332" />
-        <TextBox HorizontalAlignment="Left" Height="72" Margin="116,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" />
-        <Button Content="Create Ticket" HorizontalAlignment="Left" Margin="238,236,0,0" VerticalAlignment="Top" Width="97" Command="{Binding CreateTicketCmd}"/>
-        <Button Content="Cancel" HorizontalAlignment="Left" Margin="351,236,0,0" VerticalAlignment="Top" Width="97" Command="{Binding CancelCmd}"/>
+                  Width="120" Margin="116,95,0,0" Height="25" />
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="116,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="332" Text="{Binding Subject.Value}"/>
+        <TextBox HorizontalAlignment="Left" Height="72" Margin="116,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" Text="{Binding Description.Value}"/>
+        <Button Content="Create Ticket" HorizontalAlignment="Left" Margin="240,273,0,0" VerticalAlignment="Top" Width="97" Command="{Binding CreateTicketCmd}"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="351,273,0,0" VerticalAlignment="Top" Width="97" Command="{Binding CancelCmd}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="116,10,0,0" TextWrapping="Wrap" Text="{Binding ProjectName.Value}" VerticalAlignment="Top"/>
     </Grid>
 </Window>

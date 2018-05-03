@@ -95,6 +95,7 @@
     <Compile Include="Models\GetIssueData.cs" />
     <Compile Include="Models\PostIssueData.cs" />
     <Compile Include="Models\RedMineApi.cs" />
+    <Compile Include="Models\ProjectIdSetting.cs" />
     <Compile Include="Models\RedmineSetting.cs" />
     <Compile Include="Models\IssueStatus.cs" />
     <Compile Include="Models\Tracker.cs" />

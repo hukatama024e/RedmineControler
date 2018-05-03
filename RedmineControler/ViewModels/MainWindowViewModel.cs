@@ -14,7 +14,6 @@ namespace RedmineControler
 	class MainWindowViewModel
 	{
         public ReactiveProperty<string> ResponceMessage { get; private set; } = new ReactiveProperty<string>();
-        public ReactiveProperty<int> SelectedProjectId { get; set; } = new ReactiveProperty<int>();
         public ReactiveCollection<Project> RedmineProjects { get; private set; } = new ReactiveCollection<Project>();
 
         public ReactiveCommand ComboBoxCmd { get; private set; }
@@ -25,7 +24,7 @@ namespace RedmineControler
             this.ComboBoxCmd = new ReactiveCommand();
             this.ComboBoxCmd.Subscribe( _ => {
                 this.ResponceMessage.Value = "";
-                var issueData = RedMineApi.GetIssueAsync( UserData.Instance.RedmineData.Url, UserData.Instance.RedmineData.ApiKey, this.SelectedProjectId.Value ).Result;
+                var issueData = RedMineApi.GetIssueAsync( UserData.Instance.RedmineData.Url, UserData.Instance.RedmineData.ApiKey, ProjectIdSetting.Instance.Id.Value ).Result;
 
                 foreach( var issue in issueData.Issues ) {
                     this.ResponceMessage.Value += $"#{issue.Id} {issue.Subject} Status={issue.Status.Name}\r\n";
@@ -43,7 +42,7 @@ namespace RedmineControler
                 this.RedmineProjects.Add( proj );
             }
 
-            this.SelectedProjectId.Value = 1;
+            ProjectIdSetting.Instance.Id.Value = 1;
         }
 	}
 }

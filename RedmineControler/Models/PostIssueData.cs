@@ -5,6 +5,12 @@ namespace RedmineControler
 {
     public class PostIssueData
     {
+        [DataMember( Name = "issue" )]
+        public PostIssue Issue { get; set; }
+    }
+
+    public class PostIssue
+    {
         [DataMember( Name = "project_id" )]
         public int ProjectId { get; set; }
 
@@ -23,7 +29,7 @@ namespace RedmineControler
         [DataMember( Name = "description" )]
         public string Description { get; set; }
 
-        public PostIssueData()
+        public PostIssue()
         {
             this.ProjectId = 0;
             this.TrackerId = -1;

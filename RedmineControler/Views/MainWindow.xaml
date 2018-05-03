@@ -13,7 +13,7 @@
         <local:CommandableComboBox ItemsSource="{Binding RedmineProjects}"
                   DisplayMemberPath="Name" 
                   SelectedValuePath="Id" 
-                  SelectedValue="{Binding SelectedProjectId.Value}"
+                  SelectedValue="{Binding Path=Id.Value, Source={x:Static local:ProjectIdSetting.Instance}}"
                   Margin="10,10,703.8,413.6" 
                   Command="{Binding ComboBoxCmd}"/>
         <Button Content="New Ticket"

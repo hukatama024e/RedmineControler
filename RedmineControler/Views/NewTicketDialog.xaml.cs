@@ -19,10 +19,11 @@ namespace RedmineControler
     /// </summary>
     public partial class NewTicketDialog : Window
     {
-        private NewTicketDialogViewModel userModel = new NewTicketDialogViewModel();
+        private NewTicketDialogViewModel userModel;
 
         public NewTicketDialog()
         {
+            this.userModel = new NewTicketDialogViewModel( this.Close );
             this.DataContext = this.userModel;
             InitializeComponent();
         }

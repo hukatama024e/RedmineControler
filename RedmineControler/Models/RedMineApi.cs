@@ -39,7 +39,9 @@ namespace RedmineControler
         public static async Task<HttpResponseMessage> PostIssueAsync( string url, string apiKey, PostIssueData issue )
         {
             try {
-                var content = new ByteArrayContent( JsonSerializer.Serialize( issue ) );
+                var content = new StringContent( Encoding.UTF8.GetString( JsonSerializer.Serialize( issue ) ),
+                                                    Encoding.UTF8, "application/json" );
+
                 var apiResponce = await new HttpClient().PostAsync( $"{url}/issues.json?key={apiKey}", content )
                                                         .ConfigureAwait( false );
 
