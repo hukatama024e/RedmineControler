@@ -1,17 +1,9 @@
 ﻿using System;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Windows.Threading;
-using System.Threading.Tasks;
-using System.ComponentModel;
 using Reactive.Bindings;
-using System.Net.Http;
-using Utf8Json;
 
 namespace RedmineControler
 {
-	class MainWindowViewModel
+    class MainWindowViewModel
 	{
         public ReactiveProperty<string> ResponceMessage { get; private set; } = new ReactiveProperty<string>();
         public ReactiveCollection<Project> RedmineProjects { get; private set; } = new ReactiveCollection<Project>();

@@ -1,17 +1,10 @@
 ﻿using System;
-using System.IO;
 using System.Linq;
-using System.Threading;
-using System.Windows.Threading;
-using System.Threading.Tasks;
-using System.ComponentModel;
 using Reactive.Bindings;
-using System.Net.Http;
-using Utf8Json;
 
 namespace RedmineControler
 {
-	class NewTicketDialogViewModel
+    class NewTicketDialogViewModel
     {
         public ReactiveCollection<Tracker> RedmineTrackers { get; private set; } = new ReactiveCollection<Tracker>();
         public ReactiveCollection<IssueStatus> RedmineStatuses { get; private set; } = new ReactiveCollection<IssueStatus>();
